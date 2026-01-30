@@ -28,6 +28,7 @@ import { LoginPage } from '../login';
 import { backupLoginForm } from '../login/data/actions';
 import { RegistrationPage } from '../register';
 import { backupRegistrationForm } from '../register/data/actions';
+import fondo from './fondo.png';
 
 const Logistration = (props) => {
   const { selectedPage, tpaProviders } = props;
@@ -96,9 +97,42 @@ const Logistration = (props) => {
     return !!provider;
   };
 
+const backgroundStyle = {
+	backgroundImage: `url(${fondo})`,
+	backgroundSize: 'cover',
+	backgroundRepeat: 'no-repeat',
+	minHeight: '100vh',
+	display: 'flex',
+	justifyContent: 'right',
+	alignItems: 'center',
+	overflow: 'hidden',
+};
+
   return (
-    <BaseContainer>
-      <div>
+    <div style={backgroundStyle}>
+	<style>
+		{`
+			#root .layout .bg-primary-400 {
+				display: none !important;
+			}
+			#root .layout {
+				background: transparent !important;
+				overflow: initial !important;
+			}
+		`}
+	</style>
+
+	<BaseContainer>
+      <div
+		style={{
+			backgroundColor: 'rgba(255, 255, 255, 0.9)',
+			padding: '2rem',
+			borderRadius: '12px',
+			boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
+			maxWidth: '450px',
+			width: '100%',
+		}}
+	>
         {disablePublicAccountCreation
           ? (
             <>
@@ -125,7 +159,6 @@ const Logistration = (props) => {
                 )
                 : (!isValidTpaHint() && !hideRegistrationLink && (
                   <Tabs defaultActiveKey={selectedPage} id="controlled-tab" onSelect={(tabKey) => handleOnSelect(tabKey, selectedPage)}>
-                    <Tab title={formatMessage(messages['logistration.register'])} eventKey={REGISTER_PAGE} />
                     <Tab title={formatMessage(messages['logistration.sign.in'])} eventKey={LOGIN_PAGE} />
                   </Tabs>
                 ))}
@@ -151,6 +184,7 @@ const Logistration = (props) => {
           )}
       </div>
     </BaseContainer>
+ </div>
   );
 };
 

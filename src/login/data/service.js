@@ -16,6 +16,11 @@ export async function loginRequest(creds) {
       requestConfig,
     )
     .catch((e) => {
+	console.log('LOGIN ERROR:', e.message);
+	if (e.response) {
+        console.log('STATUS:', e.response.status);
+        console.log('RESPONSE:', e.response.data);
+      }
       throw (e);
     });
 

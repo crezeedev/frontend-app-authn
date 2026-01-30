@@ -9,17 +9,17 @@ const messages = defineMessages({
   // Login labels
   'login.user.identity.label': {
     id: 'login.user.identity.label',
-    defaultMessage: 'Username or email',
+    defaultMessage: ' Nombre de usuario o correo electrónico',
     description: 'Label for user identity field to enter either username or email to login',
   },
   'login.password.label': {
     id: 'login.password.label',
-    defaultMessage: 'Password',
+    defaultMessage: 'Contraseña',
     description: 'Label for password field',
   },
   'sign.in.button': {
     id: 'sign.in.button',
-    defaultMessage: 'Sign in',
+    defaultMessage: 'Iniciar Sesión',
     description: 'Sign in button label that appears on login page',
   },
   'forgot.password': {
@@ -128,7 +128,7 @@ const messages = defineMessages({
   },
   'internal.server.error.message': {
     id: 'internal.server.error.message',
-    defaultMessage: 'An error has occurred. Try refreshing the page, or check your internet connection.',
+    defaultMessage: 'Le informamos que su cuenta ha sido desactivada debido a pagos pendientes o por solicitud de baja. Para obtener más información, por favor, comuníquese con nosotros a través del correo electrónico support@gmail.com.',
     description: 'Error message that appears when server responds with 500 error code',
   },
   'login.rate.limit.reached.message': {

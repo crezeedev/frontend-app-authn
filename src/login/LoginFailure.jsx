@@ -49,6 +49,7 @@ const LoginFailureMessage = (props) => {
   );
 
   let errorMessage;
+  let errorHeading = formatMessage(messages['login.failure.header.title']);
   switch (errorCode) {
     case NON_COMPLIANT_PASSWORD_EXCEPTION: {
       errorMessage = (
@@ -193,14 +194,18 @@ const LoginFailureMessage = (props) => {
       break;
     case INTERNAL_SERVER_ERROR:
     default:
-      errorMessage = <p>{formatMessage(messages['internal.server.error.message'])}</p>;
+      errorHeading = "Tu acceso ha sido suspendido.";
+      errorMessage = <p>Hay un pendiente administrativo que impide el acceso. Contacta a tu asesora educativa para brindarte apoyo.</p>;
       break;
   }
+//      errorMessage = <p>{formatMessage(messages['internal.server.error.message'])}</p>;
+
+
 
   return (
     <Alert id="login-failure-alert" className="mb-5" variant="danger" icon={Error}>
-      <Alert.Heading>{formatMessage(messages['login.failure.header.title'])}</Alert.Heading>
-      { errorMessage }
+	<Alert.Heading>{ errorHeading }</Alert.Heading>      
+		{ errorMessage }
     </Alert>
   );
 };
