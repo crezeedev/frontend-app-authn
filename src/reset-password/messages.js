@@ -3,7 +3,7 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   'sign.in': {
     id: 'sign.in',
-    defaultMessage: 'Sign in',
+    defaultMessage: 'Iniciar sesión',
     description: 'Sign in toggle text',
   },
   'reset.password.page.title': {

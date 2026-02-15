@@ -79,7 +79,7 @@ const messages = defineMessages({
   },
   'sign.in.text': {
     id: 'sign.in.text',
-    defaultMessage: 'Sign in',
+    defaultMessage: 'Iniciar sesión',
     description: 'login page link on password page',
   },
   'extend.field.errors': {
